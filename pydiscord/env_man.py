@@ -9,3 +9,6 @@ class EnvManager:
 
     def load_token(self) -> str:
         return os.getenv('DISCORD_TOKEN')
+
+    def get_channel_id(self) -> int:
+        return int(os.getenv('CHANNEL_ID'))
