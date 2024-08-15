@@ -8,7 +8,7 @@ from pydiscord.load_token import load_token
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot: Bot = commands.Bot(command_prefix='@', intents=intents)
+bot: Bot = commands.Bot(command_prefix='!', intents=intents)
 
 
 @bot.event
