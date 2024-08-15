@@ -1,6 +1,6 @@
 from typing import List
 
-from pydiscord.yf.yf import YFNews
+from pydiscord.yf.yf_news import YFNews
 
 dummy_thumbnail_url = 'https://dummy'
 

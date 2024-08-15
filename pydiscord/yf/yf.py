@@ -1,16 +1,8 @@
-from dataclasses import dataclass, field
 from typing import List
 
 import yfinance as yf
 
-
-@dataclass
-class YFNews:
-    uuid: str
-    title: str
-    publisher: str
-    link: str
-    relatedTickers: list = field(default_factory=list)
+from pydiscord.yf.yf_news import YFNews
 
 
 class YF:
