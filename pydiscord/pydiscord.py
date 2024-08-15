@@ -3,13 +3,14 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 
 from pydiscord.cogs import get_all_cogs
-from pydiscord.load_token import load_token
+from pydiscord.env_man import EnvManager
 
 
 class PyDiscord:
     def __init__(self):
         self._intents = discord.Intents.default()
         self._intents.message_content = True
+        self._env_manager = EnvManager()
 
     def start(self):
         bot: Bot = commands.Bot(
@@ -23,4 +24,4 @@ class PyDiscord:
             for b in get_all_cogs(bot):
                 await bot.add_cog(b)
 
-        bot.run(load_token())
+        bot.run(self._env_manager.load_token())
