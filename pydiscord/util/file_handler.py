@@ -14,6 +14,9 @@ class FileHandler:
             file.write(text)
 
     def read_text(self) -> str:
+        if not self._filename.is_file():
+            return ''
+
         with open(self._filename, 'r') as file:
             content = file.read()
 
