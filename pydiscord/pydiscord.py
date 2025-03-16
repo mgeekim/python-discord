@@ -1,6 +1,8 @@
+from typing import List
+
 import discord
 from discord.ext import commands
-from discord.ext.commands import Bot
+from discord.ext.commands import Bot, Cog
 
 from pydiscord.cogs import get_all_cogs
 from pydiscord.env_man import EnvManager
@@ -11,6 +13,10 @@ class PyDiscord:
         self._intents = discord.Intents.default()
         self._intents.message_content = True
         self._env_manager = EnvManager()
+        self._cogs: List[Cog] = []
+
+    def register_cog(self, cog: Cog):
+        self._cogs.append(cog)
 
     def start(self):
         bot: Bot = commands.Bot(
