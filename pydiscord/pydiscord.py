@@ -20,8 +20,8 @@ class PyDiscord:
 
         @bot.event
         async def on_ready():
-            print(f'Logged in as {bot.user}')
-            for b in get_all_cogs(bot, self._env_manager):
+            print(f'Logged in as "{bot.user}"')
+            for b in get_all_cogs(bot):
                 await bot.add_cog(b)
 
         bot.run(self._env_manager.load_token())
